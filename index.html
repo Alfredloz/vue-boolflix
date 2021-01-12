@@ -9,7 +9,12 @@
 </head>
 <body>
     <div id="app">
-        <div v-for="movie in moviesArray">{{movie.original_title}}</div>
+        <input type="text" v-model="searchMovie">
+        <button @click="searchFilms()">cerca</button>
+        <div v-for="movie in moviesArray">{{movie.title}}
+            <div>titolo originale: {{movie.original_title}}</div>
+            <div>voto: {{movie.vote_average}}</div>
+        </div>
     </div>
     <!-- vue & js -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
