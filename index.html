@@ -9,11 +9,11 @@
 </head>
 <body>
     <div id="app">
-        <input type="text" v-model="searchMovie">
+        <input type="text" v-model="searchMovie" @keyup.13="searchFilms()">
         <button @click="searchFilms()">cerca</button>
         <div v-for="movie in moviesArray">{{movie.title}}
             <div>titolo originale: {{movie.original_title}}</div>
-            <div>voto: {{movie.vote_average}}</div>
+            <div>voto: {{numberCeil(movie.vote_average)}}</div>
         </div>
     </div>
     <!-- vue & js -->
