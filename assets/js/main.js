@@ -3,9 +3,9 @@ let app = new Vue({
     data:{
         moviesArray:[],
         searchMovie: '',
-        olderRate:[],
     },
     methods:{
+      // chiamata axios per i film
         searchFilms(){
             var config = {
                 method: 'get',
@@ -23,8 +23,10 @@ let app = new Vue({
                 console.log(error);
               });
         },
+        // cambio di valutazione rating
         numberCeil(integer){
            return Math.ceil(((integer - 0) / (10 - 0)) * (5 - 0) + 0)
-        }
+        },
+        
     },
 });

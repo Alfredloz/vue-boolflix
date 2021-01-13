@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
@@ -14,6 +15,16 @@
         <div v-for="movie in moviesArray">{{movie.title}}
             <div>titolo originale: {{movie.original_title}}</div>
             <div>voto: {{numberCeil(movie.vote_average)}}</div>
+            <div><span>Lingua originale:</span></div>
+            <img :src="`https://www.countryflags.io/${movie.original_language}/shiny/64.png`" alt="">
+            <span>voto: 
+                <span>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star" :class="movie.average == 3 ? 'star':'null'"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
         </div>
     </div>
     <!-- vue & js -->
