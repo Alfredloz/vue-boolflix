@@ -10,21 +10,31 @@
 </head>
 <body>
     <div id="app">
-        <input type="text" v-model="searchMovie" @keyup.13="searchFilms()">
+        <input type="text" v-model="searchUser" @keyup.13="searchFilms()">
         <button @click="searchFilms()">cerca</button>
+        <h2>Film</h2>
         <div v-for="movie in moviesArray">{{movie.title}}
             <div>titolo originale: {{movie.original_title}}</div>
-            <div>voto: {{numberCeil(movie.vote_average)}}</div>
+            <!-- <div>voto: {{numberCeil(movie.vote_average)}}</div> -->
             <div><span>Lingua originale:</span></div>
             <img :src="`https://www.countryflags.io/${movie.original_language}/shiny/64.png`" alt="">
-            <span>voto: 
-                <span>
-                    <i class="fas fa-star star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star" :class="movie.average == 3 ? 'star':'null'"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </span>
+            <!-- <span v-for="star in starsArray">
+                {{star}}
+            </span> -->
+            <i class="fas fa-star star" v-for="star in movie.vote_average"></i><i class="far fa-star" v-for="star in (5 - movie.vote_average)"></i>
+        </div>
+        <h2>Serie Tv</h2>
+        <div v-for="serie in tvShows">
+            <div>
+                titolo Originale: {{serie.original_name}}
+            </div>
+            <img :src="`https://www.countryflags.io/${serie.original_language}/shiny/64.png`"  alt="">
+            <div>
+                Titolo italiano: {{serie.name}}
+            </div>
+            <div>
+                <i class="fas fa-star star" v-for="star in serie.vote_average"></i><i class="far fa-star" v-for="star in (5 - serie.vote_average)"></i>
+            </div>
         </div>
     </div>
     <!-- vue & js -->
