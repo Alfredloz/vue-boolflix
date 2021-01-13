@@ -30,14 +30,14 @@ let app = new Vue({
                     movie.original_language = "kr"
                   } else if(movie.original_language == "vi"){
                     movie.original_language = "vn";
-                  }else if(movie.original_language == "et"){
-                    movie.original_language = "ee";
                   }else if(movie.original_language == "ja"){
                     movie.original_language = "jp";
-                  }else if(movie.original_language == "da"){
-                    movie.original_language = "dk";
+                  }else if(movie.original_language == "et"){
+                    movie.original_language = "ee";
                   } else if(movie.original_language == "hu"){
                     movie.original_language = "ua";
+                  }else if(movie.original_language == "da"){
+                    movie.original_language = "dk";
                   }
                 });
               })
@@ -47,7 +47,7 @@ let app = new Vue({
               });
               var element = {
                 method: 'get',
-                url: `https://api.themoviedb.org/3/search/tv?api_key=178b153a9c399a44c2973d28bcf08244&language=it-IT&query=${this.searchUser}&include_adult=false`,
+                url: `https://api.themoviedb.org/3/search/tv?api_key=178b153a9c399a44c2973d28bcf08244&language=it-IT&query=${this.searchUser}&include_adult=true`,
                 header: {}
               }
               axios(element)
