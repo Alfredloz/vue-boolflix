@@ -19,9 +19,11 @@ let app = new Vue({
               .then(response=> {
                 this.moviesArray = response.data.results;
                 console.log(this.moviesArray);
+                // ciclo vor each per ogni voto e restituisce il voto con math.ceil 
                 this.moviesArray.forEach(movie => {
                   let rating = Math.ceil(movie.vote_average / 2)
                   movie.vote_average = rating;
+                  // if per le bandiere sbagliate nella richiesta api
                   if (movie.original_language == "en"){
                     movie.original_language = "gb";
                   } else if (movie.original_language == "zh") {
@@ -55,6 +57,7 @@ let app = new Vue({
                 this.tvShows = response.data.results;
                 this.tvShows.forEach(serie => {
                   let rating = Math.ceil(serie.vote_average / 2)
+                  // if per le bandiere sbagliate nella richiesta api
                   serie.vote_average = rating;
                   if (serie.original_language == "en"){
                     serie.original_language = "gb";

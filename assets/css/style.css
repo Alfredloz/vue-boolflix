@@ -11,3 +11,7 @@
     color: red;
 }
 /* /utility classes */
+.movie_img, .tv_img{
+    width: 200px;
+    height: 300px;
+}
