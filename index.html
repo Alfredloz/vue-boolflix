@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <meta charset="UTF-8">
@@ -10,40 +12,60 @@
 </head>
 <body>
     <div id="app">
-        <input type="text" v-model="searchUser" @keyup.13="searchFilms()">
-        <button @click="searchFilms()">cerca</button>
-        <h2>Film</h2>
-        <div class="movie_container" v-for="movie in moviesArray">
-            <img :src="`https://image.tmdb.org/t/p/w1280/${movie.poster_path}`" alt=" poster img movie" class="movie_img">
-            <h4>{{movie.title}}</h4>
-            <div class="movie_title">
-                <span>titolo originale: {{movie.original_title}}</span>
-            </div>
-            <div class="movie_lang">
-                <span>Lingua originale: {{movie.original_languages}}</span>
-            </div>
-            <img :src="`https://www.countryflags.io/${movie.original_language}/shiny/64.png`" alt="">         
-            <div class="rating">
-                <i class="fas fa-star star" v-for="star in movie.vote_average"></i><i class="far fa-star" v-for="star in (5 - movie.vote_average)"></i>
-            </div>
-        </div>
-        <h2>Serie Tv</h2>
-        <div class="tv_container" v-for="serie in tvShows">
-            <img :src="`https://image.tmdb.org/t/p/w1280/${serie.poster_path}`" alt="poster image tv shows" class="tv_img">
-            <h4>{{serie.name}}</h4>
-            <div>
-                <span class="tv_title">titolo Originale: {{serie.original_name}}</span>
-            </div>
-            <div class="tv_lang">
-                <span>
-                    lingua originale : {{serie.orignal_language}}
-                </span>
-            </div>
-            <img :src="`https://www.countryflags.io/${serie.original_language}/shiny/64.png`"  alt="">      
-            <div>
-                <i class="fas fa-star star" v-for="star in serie.vote_average"></i><i class="far fa-star" v-for="star in (5 - serie.vote_average)"></i>
-            </div>
-        </div>
+        <header class="d_flex">
+            <img src="./assets/img/boolflix.png" alt="">
+            <input type="text" v-model="searchUser" @keyup.13="searchFilms()">
+        </header>
+        <main class="main_content">
+            <h2>Film</h2>
+            <section class="movie_section scrollx d_flex">               
+                <div class="movie_container card" v-for="movie in moviesArray">                   
+                    <!-- condizone in cui manca l'immagine -->
+                    <div class="error_box" v-if="movie.poster_path === null">
+                        <h4 class="error_msg" >Immagine non trovata</h4>
+                    </div>
+                    <!-- /condizone in cui manca l'immagine --> 
+                    <!-- risposta se l'immagine esiste nel database -->
+                    <img src="" src="" v-else :src="`https://image.tmdb.org/t/p/w300/${movie.poster_path}`" alt=" poster img movie" class="img_card">
+                    <!-- /risposta se l'immagine esiste nel database -->
+                    <div class="movie_info">
+                        <h4>{{movie.title}}</h4>
+                    <div class="movie_title">
+                        <span>titolo originale: {{movie.original_title}}</span>
+                    </div>
+                    <div class="movie_lang">
+                        <img  :src="`https://www.countryflags.io/${movie.original_language}/shiny/64.png`" alt="">         
+                    <div class="rating">
+                    </div>
+                    
+                        <i class="fas fa-star star" v-for="star in movie.vote_average"></i><i class="far fa-star" v-for="star in (5 - movie.vote_average)"></i>
+                    </div>
+                    </div>
+                </div>
+            </section>
+            <h2>Serie Tv</h2>
+            <section class="tvshows_section scrollx d_flex">       
+                <div class="serie_container card" v-for="serie in tvShows">
+          
+                    <h4 class="error_msg" v-if="serie.poster_path === null">Immagine non trovata</h4>
+                    <img v-else :src="`https://image.tmdb.org/t/p/w300/${serie.poster_path}`" alt="poster image tv shows" class="img_card">
+                    <div class="serie_info">
+                        <h4>{{serie.name}}</h4>
+                    <div>
+                        <span class="tv_title">titolo Originale: {{serie.original_name}}</span>
+                    </div>
+                    <div class="tv_lang">
+                        <span v-if="serie.original_language === null">lingua originale: {{serie.original_language}}</span>
+                        <img v-else src="" :src="`https://www.countryflags.io/${serie.original_language}/shiny/64.png`"  alt="">      
+                        <div>
+                    </div>
+                   
+                        <i class="fas fa-star star" v-for="star in serie.vote_average"></i><i class="far fa-star" v-for="star in (5 - serie.vote_average)"></i>
+                    </div>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
     <!-- vue & js -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>

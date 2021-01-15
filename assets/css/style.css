@@ -3,15 +3,114 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Martel Sans', sans-serif;
+}
+::-webkit-scrollbar {
+width: 13px;
+height: 13px;
+}
+::-webkit-scrollbar-thumb {
+background: #f00024;
+border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover{
+background: #f73683;
+}
+::-webkit-scrollbar-track{
+background: #000000;
+border-radius: 0px;
 }
 /* /general settings */
 
 /* utility classes */
 .star{
-    color: red;
+    color: yellow;
 }
+.d_flex{
+    display: flex;
+}
+.scrollx{
+    overflow-x: scroll;
+    box-shadow: inset -1px -10px 30px 0px rgb(73, 73, 73);
+    scrollbar-color: dark;
+}
+
 /* /utility classes */
-.movie_img, .tv_img{
-    width: 200px;
-    height: 300px;
+/* header */
+header {
+    height: 5rem;
+    /* width: 100vw; */
+    background-color: black;
+    justify-content: space-between;
+    align-items: center;
+    /* position: fixed; */
 }
+header img {
+    width: 10rem;
+    height: 3rem;
+    margin-left: 10px;
+}
+header input {
+    height: 1.8rem;
+    margin-right: 20px;
+}
+/* /header */
+/* main */
+body{
+    background-color: rgb(15, 15, 15);
+}
+/* main content */
+.main_content{
+    color: white;
+    padding-top: 5rem;
+    background-color: rgb(15, 15, 15);
+    position: relative;
+}
+.main_content h2 {
+    margin: 10px;
+}
+/* /main content */
+/* sections movie & tvshows */
+.movie_section, .tvshows_section {
+    height: 30rem;
+}
+/* /sections movie & tvshows */
+/* error box */
+.erro_box{
+    width: 19rem;
+}
+/* /error box */
+/* card class */
+.card {
+    position: relative;
+    width: 19rem;
+    margin: 2rem 1rem;
+}
+/* TODO fare hove con scale */
+.card:hover{
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+    border: 1px solid white;
+}
+.img_card{
+    width: 17rem;
+    height: 25rem;
+}
+/* /card class */
+/* info card & hover */
+.movie_info, .serie_info{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(24, 24, 24, 0.687);
+}
+.movie_info:hover, .serie_info:hover{
+    opacity: 1;
+    /* transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+    border: 1px solid white; */
+}
+/* /info card & hover */
+/* /main */

@@ -4,6 +4,7 @@ let app = new Vue({
         moviesArray:[],
         tvShows: [],
         searchUser: '',
+        errorMsg: null,
 
     },
     methods:{
