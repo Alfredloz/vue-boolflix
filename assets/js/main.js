@@ -20,6 +20,7 @@ let app = new Vue({
               .then(response=> {
                 this.moviesArray = response.data.results;
                 console.log(this.moviesArray);
+                this.searchUser = '';
                 // ciclo vor each per ogni voto e restituisce il voto con math.ceil 
                 this.moviesArray.forEach(movie => {
                   let rating = Math.ceil(movie.vote_average / 2)
@@ -48,12 +49,12 @@ let app = new Vue({
                .catch(function (error) {
                 console.log(error);
               });
-              var element = {
+              var config = {
                 method: 'get',
                 url: `https://api.themoviedb.org/3/search/tv?api_key=178b153a9c399a44c2973d28bcf08244&language=it-IT&query=${this.searchUser}&include_adult=true`,
                 header: {}
               }
-              axios(element)
+              axios(config)
               .then(response=>{
                 this.tvShows = response.data.results;
                 this.tvShows.forEach(serie => {

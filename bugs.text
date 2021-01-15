@@ -1,0 +1,3 @@
+segnalazione dei bugs all'interno del programma:
+1) quando scrivo la parola 'evangelion', il primo risultato non rispetta le impostazione del css e nel overview non va in overscroll: scroll.
+2) segnalazione: per incastrare bene l'hover sulla card ho dovuto giocare con le percentuali per poter dare un effetto decente.
