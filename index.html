@@ -21,7 +21,7 @@
             <section class="movie_section scrollx d_flex">               
                 <div class="movie_container card" v-for="movie in moviesArray">                   
                     <!-- condizone in cui manca l'immagine -->
-                    <div class="error_box" v-if="movie.poster_path === null">
+                    <div class="error_box d_flex" v-if="movie.poster_path === null">
                         <h4 class="error_msg" >Immagine non trovata</h4>
                     </div>
                     <!-- /condizone in cui manca l'immagine --> 
@@ -47,7 +47,9 @@
             <section class="tvshows_section scrollx d_flex">       
                 <div class="serie_container card" v-for="serie in tvShows">
           
-                    <h4 class="error_msg" v-if="serie.poster_path === null">Immagine non trovata</h4>
+                    <div class="error_box d_flex" v-if="serie.poster_path === null">
+                        <h4 class="error_msg">Immagine non trovata</h4>
+                    </div>
                     <img v-else :src="`https://image.tmdb.org/t/p/w300/${serie.poster_path}`" alt="poster image tv shows" class="img_card">
                     <div class="serie_info">
                         <h4>{{serie.name}}</h4>

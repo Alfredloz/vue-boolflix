@@ -76,14 +76,21 @@ body{
 }
 /* /sections movie & tvshows */
 /* error box */
-.erro_box{
-    width: 19rem;
+.error_box{
+    width: 17rem;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.error_box h4 {
+    text-align: center;
+    /* line-height: 100%; */
 }
 /* /error box */
 /* card class */
 .card {
     position: relative;
-    width: 19rem;
+    width: 17rem;
     margin: 2rem 1rem;
 }
 /* TODO fare hove con scale */
@@ -93,7 +100,7 @@ body{
     border: 1px solid white;
 }
 .img_card{
-    width: 17rem;
+
     height: 25rem;
 }
 /* /card class */
