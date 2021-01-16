@@ -1,3 +1,4 @@
 segnalazione dei bugs all'interno del programma:
 1) quando scrivo la parola 'evangelion', il primo risultato non rispetta le impostazione del css e nel overview non va in overscroll: scroll.
 2) segnalazione: per incastrare bene l'hover sulla card ho dovuto giocare con le percentuali per poter dare un effetto decente.
+3) i titoli più grandi sballano il box della trama smappando compleatamente la descrizione. Diminuire la grandezza del font o il padding top del titolo!

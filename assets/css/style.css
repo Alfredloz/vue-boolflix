@@ -46,11 +46,15 @@
 }
 .d_flex{
     display: flex;
+    /* flex-wrap: wrap; */
 }
 .scrollx{
     overflow-x: scroll;
     box-shadow: inset -1px -10px 30px 0px rgb(73, 73, 73);
     scrollbar-color: dark;
+}
+.collapse_box{
+    display: none;
 }
 /* /utility classes */
 /* header */
@@ -107,6 +111,33 @@ header a {
  }
 /* /search box */
 /* /header */
+/*video banner*/
+.video_banner{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.title{
+    position: absolute;
+    height: calc(100% - 2rem);
+    width: 55rem;
+    background-color: rgba(45, 44, 44, 0.577);
+
+    margin-top: 2rem;
+}
+.title h1 {
+    line-height: 30rem;
+    color: white;
+    text-align: center;
+}
+.video_banner video{
+    display: block;
+    margin: auto;
+    width: 55rem;
+    margin-top: 2rem;
+}
+/*/video banner*/
 /* main */
 body{
     background-color: rgb(15, 15, 15);
@@ -138,7 +169,7 @@ body{
 .error_box h4 {
     text-align: center;
     opacity: 0.1;
-    font-size: 1.5rem;
+    font-size: 2rem;
     /* line-height: 100%; */
 }
 /* /error box */
@@ -169,10 +200,11 @@ body{
     height: 100%;
     background-color: rgba(24, 24, 24, 0.687);
     padding: 1rem;
+    /* padding: 1rem; */
 }
 .movie_info h4, .serie_info h4 {
     text-align: center;
-    padding: 0.5rem;
+    /* padding: 0.5rem; */
     text-transform: capitalize;
     text-transform: uppercase;
 }
@@ -183,7 +215,8 @@ body{
     border: 1px solid white; */
 }
 .overview_text{
-    height: 40%;
+    position: relative;
+    height: 7rem;
     overflow-y: scroll;
 }
 /* /info card & hover */

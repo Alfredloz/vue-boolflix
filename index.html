@@ -19,6 +19,14 @@
                 <input type="text" v-model="searchUser" @keyup.13="searchFilms()">
             </div>
         </header>
+        <div class="video_banner d_flex" :class="moviesArray.length > 0 ? 'collapse_box':''">
+            <div class="title">
+                <h1>BENVENUTO</h1>
+            </div>
+            <video autoplay muted loop>
+                <source src="./assets/video/Pexels Videos 1998560.mp4" type="video/mp4">
+            </video>
+        </div>
         <main class="main_content" v-if="moviesArray.length > 0">
             <h2>Film</h2>
             <section class="movie_section scrollx d_flex">               
