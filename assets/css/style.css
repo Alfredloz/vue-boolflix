@@ -87,7 +87,7 @@ header a {
     color: lightgray;
     align-self: center;
     height: 1.5rem;
-    padding-top: 0.2rem;
+    padding: 0.2rem;
     font-size: 1rem;
 }
 .search_box input {
@@ -120,22 +120,23 @@ header a {
 }
 .title{
     position: absolute;
-    height: calc(100% - 2rem);
-    width: 55rem;
+    height: calc(100% - 1rem);
+    width: 75rem;
     background-color: rgba(45, 44, 44, 0.577);
+    margin-top: 1rem;
 
-    margin-top: 2rem;
 }
 .title h1 {
-    line-height: 30rem;
+    line-height: 42rem;
     color: white;
     text-align: center;
+    font-size: 4rem;
 }
 .video_banner video{
     display: block;
     margin: auto;
-    width: 55rem;
-    margin-top: 2rem;
+    width: 75rem;
+    margin-top: 1rem;
 }
 /*/video banner*/
 /* main */
