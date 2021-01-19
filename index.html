@@ -54,12 +54,12 @@
                     </div>
                     <h3>Trama:</h3>
                     <!-- !soluzione iniziale trama italiano -->
-                    <!-- <p v-if="movie.overview == ``">trama non disponibile</p>
-                    <p v-else class="overview_text">{{movie.overview}}</p>                    -->
+                    <p v-if="movie.overview == ``">trama non disponibile</p>
+                    <p v-else class="overview_text">{{movie.overview}}</p>                   
                     <!-- !/soluzione iniziale trama italiano -->
                         <!-- soluzione con trama in inglese se manca in italiano -->
-                    <p v-if="movie.overview !== ``" class="overview_text">{{movie.overview}}</p>
-                    <p  v-else class="overview_text">{{moviesArray2[index].overview}}</p>
+                    <!-- <p v-if="movie.overview !== ``" class="overview_text">{{movie.overview}}</p>
+                    <p  v-else class="overview_text">{{moviesArray2[index].overview}}</p> -->
                         <!-- /soluzione con trama in inglese se manca in italiano -->
 
                 </div>

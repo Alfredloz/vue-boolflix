@@ -4,6 +4,7 @@ let app = new Vue({
         moviesArray:[],
         moviesArray2: [],
         tvShows: [],
+        tvShows2: [],
         searchUser: '',
 
     },
@@ -87,6 +88,22 @@ let app = new Vue({
               .catch(function (error) {
                 console.log(error);
               });
+             
+                // !chiamata axios in inglese per le serie
+              // var config = {
+              //   method: 'get',
+              //   url: `https://api.themoviedb.org/3/search/tv?api_key=178b153a9c399a44c2973d28bcf08244&language=en-US&query=${this.searchUser}&include_adult=true`,
+              //   header: {}
+              // }
+              // axios(config)
+              // .then(response=>{
+              //   this.tvShows2 = response.data.results;
+                
+              // })
+              // // error signal
+              // .catch(function (error) {
+              //   console.log(error);
+              // });
              
         },
         // cambio di valutazione rating
