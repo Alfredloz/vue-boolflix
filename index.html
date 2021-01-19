@@ -30,7 +30,7 @@
         <main class="main_content" v-if="moviesArray.length > 0">
             <h2>Film</h2>
             <section class="movie_section scrollx d_flex">               
-                <div class="movie_container card" v-for="movie in moviesArray">                   
+                <div class="movie_container card" v-for="(movie, index) in moviesArray">                   
                     <!-- condizone in cui manca l'immagine -->
                     <div class="error_box d_flex" v-if="movie.poster_path === null">
                         <h4 class="error_msg" >Immagine non trovata</h4>
@@ -53,9 +53,15 @@
                         <i class="fas fa-star star" v-for="star in movie.vote_average"></i><i class="far fa-star" v-for="star in (5 - movie.vote_average)"></i>
                     </div>
                     <h3>Trama:</h3>
-                    <p v-if="movie.overview === `` ">trama non disponibile</p>
-                    <p v-else class="overview_text">{{movie.overview}}</p>                   
-                    </div>
+                    <!-- !soluzione iniziale trama italiano -->
+                    <!-- <p v-if="movie.overview == ``">trama non disponibile</p>
+                    <p v-else class="overview_text">{{movie.overview}}</p>                    -->
+                    <!-- !/soluzione iniziale trama italiano -->
+                        <!-- soluzione con trama in inglese se manca in italiano -->
+                    <p v-if="movie.overview !== ``" class="overview_text">{{movie.overview}}</p>
+                    <p  v-else class="overview_text">{{moviesArray2[index].overview}}</p>
+                        <!-- /soluzione con trama in inglese se manca in italiano -->
+
                 </div>
             </section>
             <h2>Serie Tv</h2>
